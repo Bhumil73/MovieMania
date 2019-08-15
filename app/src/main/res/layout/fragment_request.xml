@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#EEEFF5"
     >
 <LinearLayout
+    android:id="@+id/ReqLl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentTop="true"
+    android:background="#ffff"
     android:gravity="left">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Request Movie"
         android:textStyle="bold"
-        android:textColor="#9C27B0"
+        android:textColor="#3F51B5"
         android:fontFamily="cursive"
         android:textSize="50sp"
         android:layout_marginTop="15dp"
@@ -20,4 +23,65 @@
         android:layout_centerInParent="true"/>
 
 </LinearLayout>
+
+    <EditText
+        android:id="@+id/movieReqName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:textColor="#3F51B5"
+        android:drawableLeft="@drawable/movie_title"
+        android:drawablePadding="15dp"
+        android:paddingStart="15dp"
+        android:background="@drawable/white_bg"
+        android:layout_below="@+id/ReqLl"
+        android:textColorHint="#8290DB"
+        android:layout_marginTop="50dp"
+        android:inputType="textPersonName"
+        android:hint="Movie Title" />
+
+    <EditText
+        android:id="@+id/movieReqDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="13"
+        android:textSize="20sp"
+        android:textColor="#3F51B5"
+        android:background="@drawable/white_bg"
+        android:textColorHint="#8290DB"
+        android:layout_below="@+id/movieReqName"
+        android:drawableLeft="@drawable/description"
+        android:drawablePadding="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:inputType="textMultiLine"
+        android:hint="Movie Description or Reason"/>
+
+    <Button
+        android:id="@+id/ReqButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REQUEST"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="70dp"
+        android:textColor="#ffff"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/blue"
+        android:layout_below="@+id/movieReqDesc"/>
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:layout_below="@+id/movieReqDesc"
+        android:layout_marginTop="50dp"
+        android:textColor="#ffff"
+        android:background="@drawable/red"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="70dp"/>
 </RelativeLayout>
