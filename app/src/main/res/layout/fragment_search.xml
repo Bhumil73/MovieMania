@@ -1,15 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent"
     >
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:id="@+id/SearchLl"
+    android:layout_height="wrap_content"
+    android:background="#ffff"
+    android:layout_alignParentTop="true"
+    android:gravity="left|center_vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search"
-        android:textColor="#9C27B0"
+        android:textColor="#3F51B5"
         android:textStyle="bold"
+        android:layout_marginStart="15dp"
         android:fontFamily="cursive"
         android:textSize="50sp"
-        android:layout_centerInParent="true"/>
+        />
+</LinearLayout>
+
+    <EditText
+        android:id="@+id/searchMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:drawableLeft="@drawable/movie_title"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:drawablePadding="15dp"
+        android:background="@drawable/white_bg"
+        android:layout_marginStart="50dp"
+        android:layout_below="@+id/SearchLl"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:inputType="textPersonName"
+        android:hint="Enter Movie Name" />
+
+    <ImageButton
+        android:id="@+id/search_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/SearchLl"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/blue_round"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/search_white" />
+
+    <Spinner
+        android:id="@+id/qualitySpinner"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:foregroundTint="#ffff"
+        android:background="@drawable/light_blue"
+        android:entries="@array/quality"
+        android:layout_below="@+id/qualityTextView"/>
+
+    <TextView
+        android:id="@+id/qualityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="50dp"
+        android:textSize="17sp"
+        android:textColor="#3F51B5"
+        android:background="#00FFFFFF"
+        android:layout_below="@+id/searchMovie"
+        android:text="Quality" />
+
+    <TextView
+        android:id="@+id/RatingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchMovie"
+        android:layout_toEndOf="@+id/qualityTextView"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:textSize="17sp"
+        android:textColor="#3F51B5"
+        android:text="Rating" />
+    <Spinner
+        android:id="@+id/ratingSpinner"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/qualitySpinner"
+        android:textAlignment="center"
+        android:foregroundTint="#ffff"
+        android:background="@drawable/light_blue"
+        android:entries="@array/Rating"
+        android:layout_below="@+id/RatingTextView"/>
+    <TextView
+        android:id="@+id/genreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchMovie"
+        android:layout_toEndOf="@+id/RatingTextView"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:textSize="17sp"
+        android:textColor="#3F51B5"
+        android:text="Genre"/>
+    <Spinner
+        android:id="@+id/genreSpinner"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/ratingSpinner"
+        android:textAlignment="center"
+        android:background="@drawable/light_blue"
+        android:layout_below="@+id/genreTextView"
+        android:entries="@array/Genre"/>
+    <TextView
+        android:id="@+id/orderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genreSpinner"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:textSize="17sp"
+        android:textColor="#3F51B5"
+        android:text="Order By"/>
+    <Spinner
+        android:id="@+id/orderSpinner"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/genreSpinner"
+        android:textAlignment="center"
+        android:background="@drawable/light_blue"
+        android:layout_below="@+id/orderTextView"
+        android:entries="@array/order_by"/>
 </RelativeLayout>
