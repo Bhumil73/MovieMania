@@ -66,4 +66,11 @@
         <item>Alphabetical</item>
         <item>Downloads</item>
     </string-array>
+    <string name="appName">Movie Mania</string>
+    <string name="hintSearchMovie">Enter Movie Name</string>
+    <string name="quality">Quality</string>
+    <string name="rating">Rating</string>
+    <string name="genre">Genre</string>
+    <string name="order">Order by</string>
+    <string name="seachB">Search</string>
 </resources>
