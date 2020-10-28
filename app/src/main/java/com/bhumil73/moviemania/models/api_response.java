@@ -1,4 +1,4 @@
-package com.bhumil73.moviemania;
+package com.bhumil73.moviemania.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,7 +8,7 @@ public class api_response {
     public JSONObject data;
     public boolean is_error;
 
-    api_response(String jsonString) throws JSONException {
+    public api_response(String jsonString) throws JSONException {
         JSONObject jsonObject = new JSONObject(jsonString);
         this.status = jsonObject.getString("status");
         this.status_message = jsonObject.getString("status_message");

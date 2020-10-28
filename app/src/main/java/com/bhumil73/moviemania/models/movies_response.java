@@ -1,4 +1,4 @@
-package com.bhumil73.moviemania;
+package com.bhumil73.moviemania.models;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,9 +11,9 @@ public class movies_response {
 
     int movies_count, limit, page_number;
 
-    List< movie > movies;
+    public List<movie> movies;
 
-    movies_response(JSONObject data) throws JSONException {
+    public movies_response(JSONObject data) throws JSONException {
         this.movies_count = data.getInt("movie_count");
         this.limit = data.getInt("limit");
         this.page_number = data.getInt("page_number");

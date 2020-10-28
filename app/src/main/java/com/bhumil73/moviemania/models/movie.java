@@ -1,4 +1,4 @@
-package com.bhumil73.moviemania;
+package com.bhumil73.moviemania.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;

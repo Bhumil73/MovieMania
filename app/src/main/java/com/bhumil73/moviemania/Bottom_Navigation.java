@@ -1,12 +1,16 @@
 package com.bhumil73.moviemania;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
+import com.bhumil73.moviemania.fragments.HomeFragment;
+import com.bhumil73.moviemania.fragments.ProfileFragment;
+import com.bhumil73.moviemania.fragments.RequestFragment;
+import com.bhumil73.moviemania.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Bottom_Navigation extends AppCompatActivity {
