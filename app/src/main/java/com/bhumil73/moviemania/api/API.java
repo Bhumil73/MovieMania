@@ -3,6 +3,7 @@ package com.bhumil73.moviemania.api;
 import android.content.Context;
 import android.net.Uri;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,7 +25,7 @@ public class API {
         context = ctx;
     }
 
-    public void fetch_results(String endpoints, Map<String, String> params, final api_callback<api_response> callback) throws JSONException {
+    public void fetch_results(String endpoints, Map<String, String> params, final api_callback<api_response> callback) {
         Map<String, String> final_params = new HashMap<>();
         //adding provided params with finalParams
         final_params.putAll(params);
@@ -33,8 +34,8 @@ public class API {
         String finalUrl = this.buildURL(endpoints, final_params);
 
         //API Call
-        RequestQueue response = Volley.newRequestQueue(context);
-        response.add(new StringRequest(Request.Method.GET, finalUrl, new Response.Listener<String>() {
+        final RequestQueue requestQueue = Volley.newRequestQueue(context);
+        StringRequest request = new StringRequest(Request.Method.GET, finalUrl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -48,7 +49,10 @@ public class API {
             public void onErrorResponse(VolleyError error) {
                 callback.onError();
             }
-        }));
+        });
+        request.setRetryPolicy(new DefaultRetryPolicy(2000, 5, 0.1f));
+        requestQueue.add(request);
+        requestQueue.start();
     }
 
     private String buildURL(String baseURL, Map<String, String> params) {

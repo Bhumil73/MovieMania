@@ -15,10 +15,10 @@ import java.util.Map;
 public class api_movies extends API {
 
     // Constants
-    public final String endpoint_listMovies = "https://yts.mx/api/v2/list_movies.json";
+    public final String endpoint_listMovies = "https://yts.lt/api/v2/list_movies.json";
 
     // Constructor
-    api_movies(Context ctx) {
+    public api_movies(Context ctx) {
         super(ctx);
     }
 
@@ -26,7 +26,7 @@ public class api_movies extends API {
     /**
      * API Methods
      */
-    public void listMovies(int page, final api_callback<List<movie>> callback) throws JSONException {
+    public void listMovies(int page, final api_callback<List<movie>> callback) {
         int movies_per_page = 10;
         Map<String, String> params = new HashMap<>();
         params.put("page", Integer.toString(page));
@@ -42,7 +42,7 @@ public class api_movies extends API {
 
             @Override
             public void onError() {
-
+                callback.onError();
             }
         });
     }
